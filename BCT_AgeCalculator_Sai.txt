@@ -1,0 +1,21 @@
+// Name : Saikrishna Muralidaran
+// UID : 2019120041
+// BE EXTC
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.5.0;
+
+contract AgeCalculator{
+    uint year;
+    function getAge() public view returns(int){
+        uint curyear=2022;
+        if (year>curyear){
+            return -1;
+        }
+        else{
+            return int(curyear-year);
+        }
+    }
+    function setDOB(uint _year) public{
+        year=_year;
+    }
+}
