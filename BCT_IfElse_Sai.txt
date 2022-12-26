@@ -1,0 +1,36 @@
+// Name : Saikrishna Muralidaran
+// UID : 2019120041
+// BE EXTC
+// SPDX-License-Identifier: MIT
+pragma solidity>=0.7.0 <0.9.0;
+
+contract ifElseExample{
+    address owner;
+
+    constructor(){
+        owner=msg.sender;
+    }
+
+    modifier onlyOwner(){
+        require( owner ==msg.sender, "only owner can access");
+        _;
+    }
+
+    function setMessage(uint a, uint b, uint c, uint d) public view onlyOwner returns(uint){
+        
+    
+        if( a>b && a>c && a>d){
+            return (a);
+        }
+        else if( b>a && b>c && b>d){
+            return (b);
+
+        }
+        else if (c>a && c>b && c>d){
+            return (c);
+        }
+        else{
+            return (d);
+        }
+    }
+}
